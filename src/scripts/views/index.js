@@ -2,8 +2,10 @@
 import LazyLoad from "&/lazyload"
 // import {Guide} from "./guide"
 // import { Index } from "./app";
+
 const Guide = LazyLoad(()=>import("./guide"));
 const Index = LazyLoad(()=>import("./app"));
+const Search = LazyLoad(()=>import("./search"));
 
 
 import { Route,Switch ,Redirect } from "react-router-dom" 
@@ -23,6 +25,9 @@ export class Layout extends Component{
                     <Route path="/" exact render={()=>( <Redirect to="/guide" /> )} />
                     <Route path="/guide" component={Guide}/>
                     <Route path="/index/" component={Index}/>
+                    <Route path="/search" component={Search} />
+                    <Route path="/scan" component={LazyLoad(()=>import("./scan"))} />
+                    {/* <Route path="/login" component={LazyLoad(()=>import("./login"))} /> */}
                     <Route render={()=>(<Redirect  to="/index/home"  />)}/>
                 </Switch>
             </div>

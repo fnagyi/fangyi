@@ -6,7 +6,7 @@ import {MainRoute} from "./scripts/index"
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-// ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 // import  "./redux";
-import "./react-redux"
+// import "./react-redux"
 serviceWorker.unregister();   
